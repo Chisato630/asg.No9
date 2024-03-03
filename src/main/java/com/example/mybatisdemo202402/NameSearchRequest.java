@@ -1,5 +1,7 @@
 package com.example.mybatisdemo202402;
 
+import java.util.Objects;
+
 public class NameSearchRequest {
 
     private String startsWith;
@@ -13,14 +15,26 @@ public class NameSearchRequest {
     }
 
     public String getStartsWith(){
-        return startsWith == null ? "" : startsWith;
+        if(Objects.isNull(startsWith)) {
+            return "";
+        }else{
+            return startsWith;
+        }
     }
 
     public String getEndsWith(){
-        return endsWith == null ? "" : endsWith;
+        if(Objects.isNull(endsWith)) {
+            return "";
+        }else{
+            return endsWith;
+        }
     }
 
     public String getContains(){
-        return contains == null ? "" : contains;
+        if(Objects.isNull(contains)) {
+            return "";
+        }else{
+            return contains;
+        }
     }
 }
