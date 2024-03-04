@@ -8,32 +8,32 @@ public class NameSearchRequest {
     private String endsWith;
     private String contains;
 
-    public NameSearchRequest(String startsWith,String endsWith,String contains){
+    public NameSearchRequest(String startsWith, String endsWith, String contains) {
         this.startsWith = startsWith;
         this.endsWith = endsWith;
         this.contains = contains;
     }
 
-    public String getStartsWith(){
-        if(Objects.isNull(startsWith)) {
+    public String getStartsWith() {
+        if (Objects.isNull(startsWith)) {
             return "";
-        }else{
+        } else {
             return startsWith;
         }
     }
 
-    public String getEndsWith(){
-        if(Objects.isNull(endsWith)) {
+    public String getEndsWith() {
+        if (Objects.isNull(endsWith)) {
             return "";
-        }else{
+        } else {
             return endsWith;
         }
     }
 
-    public String getContains(){
-        if(Objects.isNull(contains)) {
+    public String getContains() {
+        if (Objects.isNull(contains)) {
             return "";
-        }else{
+        } else {
             return contains;
         }
     }
