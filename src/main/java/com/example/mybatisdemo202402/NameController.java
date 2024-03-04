@@ -16,7 +16,7 @@ public class NameController {
 
     @GetMapping("/names")
     public List<Name> findByNames(NameSearchRequest request){
-        List<Name> names = nameMapper.findByNameAny(request.getStartsWith(), request.getEndsWith(), request.getContains());
+        List<Name> names = nameMapper.findNames(request.getStartsWith(), request.getEndsWith(), request.getContains());
         return names;
     }
 }
