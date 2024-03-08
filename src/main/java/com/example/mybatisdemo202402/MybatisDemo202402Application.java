@@ -9,5 +9,4 @@ public class MybatisDemo202402Application {
 	public static void main(String[] args) {
 		SpringApplication.run(MybatisDemo202402Application.class, args);
 	}
-
 }
