@@ -20,11 +20,9 @@ public class NameService {
     }
 
     public Name findNames(int id){
-        Optional<Name> name = this.nameMapper.findById(id);
-        if (name.isPresent()) {
-            return name.get();  // Optional.get()は値が存在しない場合例外を発生させる
-        } else {
-            throw new UserNotFoundException("user not found");
-        }
+        Optional<Name> name = this.nameMapper.findById(id); //名前の取得
+        return this.nameMapper.findById(id).orElseThrow(() -> new UserNotFoundException("user not found"));
+        // メソッド内での名前の存在チェックと例外のスローを行う
+        // `name` 変数の宣言を省略し、`orElseThrow` メソッドの中で直接 `return` 文を使用
     }
 }

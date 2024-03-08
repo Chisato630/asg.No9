@@ -1,6 +1,6 @@
 
 # 参考
-- 例外をハンドリングする処理を`NameController`に記述した場合
+## ①例外をハンドリングする処理を`NameController`に記述した場合
 
 **NameController**
 ```sh
@@ -53,4 +53,16 @@ public class NameController {
 }
 
 ```
-![img.png](img.png)
+  
+***
+## ②`NameService` 修正前：例外をif/elseでスローする
+```sh
+    public Name findNames(int id){
+        Optional<Name> name = this.nameMapper.findById(id);
+        if (name.isPresent()) {
+            return name.get();  // Optional.get()は値が存在しない場合例外を発生させる
+        } else {
+            throw new UserNotFoundException("user not found");
+        }
+    }
+```
